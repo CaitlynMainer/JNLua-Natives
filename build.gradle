@@ -16,13 +16,19 @@ binaries.all {
         }
         tasks.withType(LinkSharedLibrary) {
             tasks.withType(CCompile) {
-                includes.from("eris/src")
+                includes.from("lua/src")
                 includes.from("/usr/lib/jvm/java-6-openjdk/include")
                 includes.from("/usr/lib/jvm/java-6-openjdk/include/linux")
                 includes.from("/usr/lib/jvm/java-7-openjdk/include")
                 includes.from("/usr/lib/jvm/java-7-openjdk/include/linux")
                 includes.from("/usr/lib/jvm/java-7-openjdk-amd64/include")
                 includes.from("/usr/lib/jvm/java-7-openjdk-amd64/include/linux")
+                includes.from("/usr/lib/jvm/java-8-openjdk/include")
+                includes.from("/usr/lib/jvm/java-8-openjdk/include/linux")
+                includes.from("/usr/lib/jvm/java-7-oracle/include")
+                includes.from("/usr/lib/jvm/java-7-oracle/include/linux")
+                includes.from("/usr/lib/jvm/java-8-oracle/include")
+                includes.from("/usr/lib/jvm/java-8-oracle/include/linux")
                 includes.from("/usr/local/openjdk7/include")
                 includes.from("/usr/local/openjdk7/include/freebsd")
                 includes.from("/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/include")
@@ -40,7 +46,7 @@ binaries.all {
         }
         tasks.withType(LinkSharedLibrary) {
             tasks.withType(CCompile) {
-                includes.from("eris/src")
+                includes.from("lua/src")
                 includes.from("C:/Program Files (x86)/Java/jdk1.7.0_55/include")
                 includes.from("C:/Program Files (x86)/Java/jdk1.7.0_55/include/win32")
             }
@@ -63,7 +69,7 @@ sources {
     natives {
         c {
             source {
-                srcDir "eris/src"
+                srcDir "lua/src"
                 srcDir "jnlua/jnlua/src/main/c"
                 include "*.c"
                 exclude "luac.c", "lua.c"
